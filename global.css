@@ -83,7 +83,7 @@
   }
 
   .home-balance-card {
-    @apply my-2.5 min-h-50 justify-between gap-5 rounded-bl-4xl rounded-tr-4xl bg-accent p-6;
+    @apply my-2.5 min-h-50 justify-between gap-5 rounded-bl-4xl rounded-tr-4xl bg-green-600 p-6;
   }
 
   .home-balance-label {
@@ -251,19 +251,19 @@
   }
 
   .auth-logo-mark {
-    @apply relative size-14 items-center justify-center rounded-2xl bg-accent;
+    @apply relative size-14 items-center justify-center rounded-2xl bg-green-600;
   }
 
   .auth-logo-mark-text {
-    @apply text-2xl font-sans-extrabold text-background;
+    @apply text-3xl font-sans-extrabold text-background;
   }
 
   .auth-wordmark {
-    @apply text-3xl font-sans-extrabold text-primary;
+    @apply text-3xl  font-sans-extrabold text-primary;
   }
 
   .auth-wordmark-sub {
-    @apply -mt-1 text-xs font-sans-semibold uppercase tracking-[1px] text-muted-foreground;
+    @apply mt-1 text-xs font-sans-semibold uppercase tracking-[1px] text-muted-foreground;
   }
 
   .auth-title {
@@ -307,11 +307,11 @@
   }
 
   .auth-button {
-    @apply mt-1 items-center rounded-2xl bg-accent py-4;
+    @apply mt-1 items-center rounded-2xl bg-green-600 py-4;
   }
 
   .auth-button-disabled {
-    @apply bg-accent/45;
+    @apply bg-green-600/45;
   }
 
   .auth-button-text {
@@ -319,11 +319,11 @@
   }
 
   .auth-secondary-button {
-    @apply items-center rounded-2xl border border-accent/30 bg-accent/10 py-3;
+    @apply items-center rounded-2xl border border-accent/30 bg-green-600/10 py-3;
   }
 
   .auth-secondary-button-text {
-    @apply text-sm font-sans-semibold text-accent;
+    @apply text-sm font-sans-semibold text-green-600;
   }
 
   .auth-divider-row {
@@ -347,7 +347,7 @@
   }
 
   .auth-link {
-    @apply text-sm font-sans-bold text-accent;
+    @apply text-sm font-sans-bold text-green-600;
   }
 
   .modal-overlay {
@@ -387,7 +387,7 @@
   }
 
   .picker-option-active {
-    @apply border-accent bg-accent/10;
+    @apply border-accent bg-green-600/10;
   }
 
   .picker-option-text {
@@ -395,7 +395,7 @@
   }
 
   .picker-option-text-active {
-    @apply text-accent;
+    @apply text-green-600;
   }
 
   .category-scroll {
@@ -407,7 +407,7 @@
   }
 
   .category-chip-active {
-    @apply border-accent bg-accent/10;
+    @apply border-accent bg-green-600/10;
   }
 
   .category-chip-text {
@@ -415,6 +415,6 @@
   }
 
   .category-chip-text-active {
-    @apply text-accent;
+    @apply text-green-600;
   }
 }

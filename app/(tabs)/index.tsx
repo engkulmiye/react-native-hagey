@@ -1,10 +1,10 @@
 import ListHeading from "@/components/ListHeading";
 import SubscriptionCard from "@/components/SubscriptionCard";
 import UpcomingSubscription from "@/components/UpcomingSubscription";
+import { useUser } from "@clerk/expo";
 import {
   HOME_BALANCE,
   HOME_SUBSCRIPTIONS,
-  HOME_USER,
   UPCOMING_SUBSCRIPTIONS,
 } from "@/constants/data";
 import { icons } from "@/constants/icons";
@@ -19,9 +19,16 @@ import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
 
 const SafeAreaView = styled(RNSafeAreaView);
 export default function App() {
+  const { user } = useUser();
   const [expandedSubscription, setExpandedSubscriptionId] = useState<
     string | null
   >(null);
+  const displayName =
+    user?.fullName || user?.firstName || user?.username || "Welcome";
+  const avatarSource = user?.imageUrl
+    ? { uri: user.imageUrl }
+    : images.avatar;
+
   return (
     <SafeAreaView className="flex-1 bg-background p-5">
       <FlatList
@@ -29,15 +36,14 @@ export default function App() {
           <>
             <View className="home-header">
               <View className="home-user">
-                <Image source={images.avatar} className="home-avatar" />
-                <Text className="home-user-name">{HOME_USER.name}</Text>
+                <Image source={avatarSource} className="home-avatar" />
+                <Text className="home-user-name">{displayName}</Text>
               </View>
               <Image source={icons.add} className="home-add-icon" />
             </View>
 
             <View className="home-balance-card">
               <Text className="home-balance-label">Balance</Text>
-
               <View className="home-balance-row">
                 <Text className="home-balance-amount">
                   {formatCurrency(HOME_BALANCE.amount)}
@@ -48,7 +54,7 @@ export default function App() {
               </View>
             </View>
 
-            <View className="mb-5">
+            <View className="mb-3">
               <ListHeading title="Upcoming" />
               <FlatList
                 data={UPCOMING_SUBSCRIPTIONS}
@@ -64,7 +70,7 @@ export default function App() {
               />
             </View>
 
-            <ListHeading title="All Subscription" />
+            <ListHeading title="All Subscriptions" />
           </>
         )}
         data={HOME_SUBSCRIPTIONS}
